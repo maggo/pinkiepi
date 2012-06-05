@@ -1,6 +1,7 @@
 module.exports = class IRCParser
 	parseMessage: (line, stripColors) ->
         message = {}
+        message.rawLine = line
 
         if stripColors then line = line.replace /[\x02\x1f\x16\x0f]|\x03\d{0,2}(?:,\d{0,2})?/g, ""
 

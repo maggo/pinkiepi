@@ -11,7 +11,6 @@ module.exports = class IRCClient extends events.EventEmitter
             callback = host
 
         @connection = net.connect port, host, =>
-            console.log 'Connected'
             @connection.setEncoding 'utf8'
             @connection.on 'data', (data) =>
                 @rawMessage data
